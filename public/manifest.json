@@ -5,11 +5,13 @@
   "version": "1.0.1",
   "description": "Dice roll that determines your fate for MCQs",
   "icons": {
-    "32": "dice.ico"
+    "16": "logo16.png",
+    "32": "logo32.png",
+    "128": "logo32.png"
   },
 
   "browser_action": {
-    "default_icon": "dice.ico",
+    "default_title": "MCQ Dice Roller",
     "default_popup": "index.html"
   }
 }
