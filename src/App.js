@@ -57,7 +57,7 @@ const App = () => {
 
   const handleOptionsChange = (event) => {
     const updatedOptions = options.map((opt, index) => {
-      if (index === event.target.value-1) {
+      if (index == event.target.value) {
         return !opt;
       } else {
         return opt;
@@ -108,7 +108,7 @@ const App = () => {
           <input
             type="checkbox"
             name="options"
-            value="1"
+            value="0"
             checked={options[0] === true}
             onChange={handleOptionsChange}
           /> First 
@@ -116,7 +116,7 @@ const App = () => {
           <input
             type="checkbox"
             name="options"
-            value="2"
+            value="1"
             checked={options[1] === true}
             onChange={handleOptionsChange}
           /> Second
@@ -124,7 +124,7 @@ const App = () => {
           <input
             type="checkbox"
             name="options"
-            value="3"
+            value="2"
             checked={options[2] === true}
             onChange={handleOptionsChange}
           /> Third
@@ -132,7 +132,7 @@ const App = () => {
           <input
             type="checkbox"
             name="options"
-            value="4"
+            value="3"
             checked={options[3] === true}
             onChange={handleOptionsChange}
           /> Fourth
