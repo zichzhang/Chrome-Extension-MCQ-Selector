@@ -21,9 +21,9 @@ const App = () => {
     { option: 'd' },
   ]);
 
-  const [options, setOptions] = useState([
+  const [options, setOptions] = useState(
     new Array(data.length).fill(false) // [false,false,false,false]
-  ]);
+  );
 
   const handleSpinClick = () => {
     if (format === 'numeric') {
@@ -49,6 +49,7 @@ const App = () => {
     const prizeNumber = Math.floor(Math.random() * data.length);
     setPrizeNumber(prizeNumber);
     setMustSpin(true);
+    console.log(options);
   }
 
   const handleFormatChange = (event) => {
@@ -56,15 +57,11 @@ const App = () => {
   }
 
   const handleOptionsChange = (event) => {
-    const updatedOptions = options.map((opt, index) => {
-      if (index == event.target.value) {
-        return !opt;
-      } else {
-        return opt;
-      }
-    });
+    const updatedOptions = options.map((opt, index) => 
+      index == parseInt(event.target.value) ? !opt : opt
+    ); 
     setOptions(updatedOptions);
-    console.log(updatedOptions);
+    
   }
 
   return (
