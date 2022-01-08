@@ -2,13 +2,6 @@ import './App.css';
 import { useState } from 'react'
 import { Wheel } from 'react-custom-roulette'
 
-const initData = [
-  { option: 'a' },
-  { option: 'b' },
-  { option: 'c' },
-  { option: 'd' },
-];
-
 const backgroundColors = ['#016D29','#E0080B','#FFFFFF','#F3C620']; // [green,red,white,yellow]
 const outerBorderWidth = 10;
 const innerBorderWidth = 2;
@@ -21,7 +14,16 @@ const App = () => {
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
   const [format, setFormat] = useState('alphabetic');
-  const [data, setData] = useState(initData);
+  const [data, setData] = useState([
+    { option: 'a' },
+    { option: 'b' },
+    { option: 'c' },
+    { option: 'd' },
+  ]);
+
+  const [options, setOptions] = useState([
+    new Array(data.length).fill(false) // [false,false,false,false]
+  ]);
 
   const handleSpinClick = () => {
     if (format === 'numeric') {
@@ -43,14 +45,26 @@ const App = () => {
         ]
       );
     }
-    
+
     const prizeNumber = Math.floor(Math.random() * data.length);
     setPrizeNumber(prizeNumber);
     setMustSpin(true);
   }
 
-  const handleChange = (event) => {
+  const handleFormatChange = (event) => {
     setFormat(event.target.value);
+  }
+
+  const handleOptionsChange = (event) => {
+    const updatedOptions = options.map((opt, index) => {
+      if (index === event.target.value-1) {
+        return !opt;
+      } else {
+        return opt;
+      }
+    });
+    setOptions(updatedOptions);
+    console.log(updatedOptions);
   }
 
   return (
@@ -71,20 +85,57 @@ const App = () => {
       />
       <div>
         <form>
-          <input 
+          <p>Select format</p>
+          <input
             type="radio" 
-            value="numeric" 
             name="format"
+            value="numeric" 
             checked={format === 'numeric'}
-            onChange={handleChange}
-          /> Numeric
+            onChange={handleFormatChange}
+          /> Numeric 
+          <br/>
           <input 
             type="radio" 
-            value="alphabetic" 
             name="format" 
+            value="alphabetic" 
             checked={format === 'alphabetic'}
-            onChange={handleChange}  
+            onChange={handleFormatChange}  
           /> Alphabetic
+        </form>
+        <br/>
+        <form>
+          <p>Select options</p>
+          <input
+            type="checkbox"
+            name="options"
+            value="1"
+            checked={options[0] === true}
+            onChange={handleOptionsChange}
+          /> First 
+          <br/>
+          <input
+            type="checkbox"
+            name="options"
+            value="2"
+            checked={options[1] === true}
+            onChange={handleOptionsChange}
+          /> Second
+          <br/>
+          <input
+            type="checkbox"
+            name="options"
+            value="3"
+            checked={options[2] === true}
+            onChange={handleOptionsChange}
+          /> Third
+          <br/>
+          <input
+            type="checkbox"
+            name="options"
+            value="4"
+            checked={options[3] === true}
+            onChange={handleOptionsChange}
+          /> Fourth
         </form>
         <button class="spin-button" onClick={handleSpinClick}>SPIN</button>
       </div>
