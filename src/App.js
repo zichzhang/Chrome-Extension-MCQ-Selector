@@ -20,7 +20,6 @@ const App = () => {
     { option: 'c' },
     { option: 'd' },
   ]);
-
   const [options, setOptions] = useState(
     new Array(data.length).fill(false) // [false,false,false,false]
   );
@@ -33,7 +32,7 @@ const App = () => {
           { option: '2' },
           { option: '3' },
           { option: '4' },
-        ]
+        ].filter((opt, index) => options[index])
       );
     } else {
       setData(
@@ -42,14 +41,13 @@ const App = () => {
           { option: 'b' },
           { option: 'c' },
           { option: 'd' },
-        ]
+        ].filter((opt, index) => options[index])
       );
     }
 
     const prizeNumber = Math.floor(Math.random() * data.length);
     setPrizeNumber(prizeNumber);
     setMustSpin(true);
-    console.log(options);
   }
 
   const handleFormatChange = (event) => {
