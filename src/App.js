@@ -156,7 +156,12 @@ const App = () => {
               onChange={handleOptionsChange}
             /> <label for="checkbox-3">Fourth</label>
           </form>
-          <button class="spin-button" onClick={handleSpinClick}>SPIN</button>
+          <button 
+            class="spin-button" 
+            disabled={checkboxCount <= 1 ? true : false}
+            onClick={handleSpinClick}
+          >SPIN
+          </button>
         </div>
       </div>
     </div>
