@@ -24,6 +24,7 @@ const App = () => {
   const [options, setOptions] = useState(
     new Array(data.length).fill(false) // [false,false,false,false]
   );
+  const [checkboxCount, setCheckboxCount] = useState(0);
 
   const handleSpinClick = () => {
     if (format === 'numeric') {
@@ -49,18 +50,24 @@ const App = () => {
     const prizeNumber = Math.floor(Math.random() * data.length);
     setPrizeNumber(prizeNumber);
     setMustSpin(true);
+    console.log(checkboxCount);
   }
 
   const handleFormatChange = (event) => {
     setFormat(event.target.value);
   }
 
-  const handleOptionsChange = (event) => {
+  const handleOptionsChange = (event) => {    
     const updatedOptions = options.map((opt, index) => 
       index == parseInt(event.target.value) ? !opt : opt
     ); 
     setOptions(updatedOptions);
     
+    if (event.target.checked) {
+      setCheckboxCount(checkboxCount + 1);
+    } else {
+      setCheckboxCount(checkboxCount - 1);
+    }
   }
 
   return (

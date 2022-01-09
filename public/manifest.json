@@ -1,17 +1,15 @@
 {
   "manifest_version": 2,
 
-  "name": "MCQ Dice Roller",
+  "name": "MAJIQ Wheel",
   "version": "1.0.1",
-  "description": "Dice roll that determines your fate for MCQs",
+  "description": "A multipurpose wheel. Originally developed for multiple choice questions. Works like MAJIQ!",
   "icons": {
-    "16": "logo16.png",
-    "32": "logo32.png",
-    "128": "logo32.png"
+    "128": "logo128.png"
   },
 
   "browser_action": {
-    "default_title": "MCQ Dice Roller",
+    "default_title": "MAJIQ Wheel",
     "default_popup": "index.html"
   }
 }
