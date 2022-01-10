@@ -181,5 +181,17 @@ form.checkbox-options label {
   display: inline-block;
   margin-top: 3px;
 }
+form.checkbox-options input.checkbox-4 {
+  margin-left: 25px;
+}
+form.checkbox-options input.checkbox-5 {
+  margin-left: 9px;
+}
+form.checkbox-options input.checkbox-6 {
+  margin-left: 21px;
+}
+form.checkbox-options input.checkbox-7 {
+  margin-left: 14px;
+}
 
 
