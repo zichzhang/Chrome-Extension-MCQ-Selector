@@ -35,7 +35,7 @@ Here are some possible use-cases of the MAJIQ Wheel: choosing between MCQ answer
 
 ## Instructions for Developers
 
->The user must have the latest [Node.js](https://nodejs.org/en/download/) version installed on their computer.
+> Users must have the latest [Node.js](https://nodejs.org/en/download/) version installed on their computer.
 
 ### Google Chrome / Microsoft Edge ### 
 1. Clone the repo in your prefered directory.
