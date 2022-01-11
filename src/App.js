@@ -203,7 +203,7 @@ const App = () => {
               value="7"
               checked={options[7] === true}
               onChange={handleOptionsChange}
-            /> <label for="checkbox-7">Sixth</label> 
+            /> <label for="checkbox-7">Eighth</label> 
           </form>
           <button 
             class="spin-button" 
