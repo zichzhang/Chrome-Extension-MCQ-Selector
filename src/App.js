@@ -20,6 +20,10 @@ const App = () => {
     { option: 'b' },
     { option: 'c' },
     { option: 'd' },
+    { option: 'e' },
+    { option: 'f' },
+    { option: 'g' },
+    { option: 'h' },
   ]);
   const [options, setOptions] = useState(
     new Array(data.length).fill(false) // [false,false,false,false]
@@ -34,6 +38,10 @@ const App = () => {
           { option: '2' },
           { option: '3' },
           { option: '4' },
+          { option: '5' },
+          { option: '6' },
+          { option: '7' },
+          { option: '8' },
         ].filter((opt, index) => options[index])
       );
     } else {
@@ -43,6 +51,11 @@ const App = () => {
           { option: 'b' },
           { option: 'c' },
           { option: 'd' },
+          { option: 'e' },
+          { option: 'f' },
+          { option: 'g' },
+          { option: 'h' },
+          
         ].filter((opt, index) => options[index])
       );
     }
@@ -127,7 +140,16 @@ const App = () => {
               value="0"
               checked={options[0] === true}
               onChange={handleOptionsChange}
-            /> <label for="checkbox-0">First</label> 
+            /> <label for="checkbox-0">First</label>
+            <input
+              class="checkbox-4"
+              type="checkbox"
+              name="options"
+              id="checkbox-4"
+              value="4"
+              checked={options[4] === true}
+              onChange={handleOptionsChange}
+            /> <label for="checkbox-4">Fifth</label>  
             <br/>
             <input
               type="checkbox"
@@ -137,6 +159,15 @@ const App = () => {
               checked={options[1] === true}
               onChange={handleOptionsChange}
             /> <label for="checkbox-1">Second</label>
+            <input
+              class="checkbox-5"
+              type="checkbox"
+              name="options"
+              id="checkbox-5"
+              value="5"
+              checked={options[5] === true}
+              onChange={handleOptionsChange}
+            /> <label for="checkbox-5">Sixth</label> 
             <br/>
             <input
               type="checkbox"
@@ -146,6 +177,15 @@ const App = () => {
               checked={options[2] === true}
               onChange={handleOptionsChange}
             /> <label for="checkbox-3">Third</label>
+            <input
+              class="checkbox-6"
+              type="checkbox"
+              name="options"
+              id="checkbox-6"
+              value="6"
+              checked={options[6] === true}
+              onChange={handleOptionsChange}
+            /> <label for="checkbox-6">Seventh</label> 
             <br/>
             <input
               type="checkbox"
@@ -155,6 +195,15 @@ const App = () => {
               checked={options[3] === true}
               onChange={handleOptionsChange}
             /> <label for="checkbox-3">Fourth</label>
+            <input
+              class="checkbox-7"
+              type="checkbox"
+              name="options"
+              id="checkbox-7"
+              value="7"
+              checked={options[7] === true}
+              onChange={handleOptionsChange}
+            /> <label for="checkbox-7">Sixth</label> 
           </form>
           <button 
             class="spin-button" 
