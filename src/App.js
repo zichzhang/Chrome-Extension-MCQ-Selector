@@ -129,6 +129,28 @@ const App = () => {
               checked={format === 'alphabetic'}
               onChange={handleFormatChange}  
             /> <label for="radio-alphabetic">Alphabetic</label>
+            <br/>
+            <input 
+              type="radio" 
+              name="format" 
+              id="radio-other"
+              value="other" 
+              checked={format === 'other'}
+              onChange={handleFormatChange}  
+            /> <label for="radio-other">Other</label>
+            <br/>
+            <span class="others-description">(type your options separated by commas in the box below and click update)</span>
+            <br/>
+            <input 
+            type="text"
+            class="input-others"
+            ></input>
+            <button 
+            class="update-button" 
+            disabled={checkboxCount <= 1 ? true : false}
+            >Update
+            </button>
+            <br/>
           </form>
           <br/>
           <form class="checkbox-options">
