@@ -29,6 +29,7 @@ const App = () => {
     new Array(data.length).fill(false) // [false,false,false,false]
   );
   const [checkboxCount, setCheckboxCount] = useState(0);
+  const [inputVariable, setInputVariable] = useState("");
 
   const handleSpinClick = () => {
     if (format === 'numeric') {
@@ -44,7 +45,7 @@ const App = () => {
           { option: '8' },
         ].filter((opt, index) => options[index])
       );
-    } else {
+    } else if (format === 'alphabetic') {
       setData(
         [
           { option: 'a' },
@@ -58,21 +59,29 @@ const App = () => {
           
         ].filter((opt, index) => options[index])
       );
+    } else {
+      // parse inputVariable by "," and map each string into object of format { option: str }
+      const otherOptions = inputVariable.replace(/\s+/g, '').split(",");
+      const otherData = otherOptions.map(opt => {
+        return { option: opt }
+      });
+      setData(otherData);
     }
 
     const prizeNumber = Math.floor(Math.random() * data.length);
     setPrizeNumber(prizeNumber);
     setMustSpin(true);
-    console.log(checkboxCount);
   }
 
   const handleFormatChange = (event) => {
     setFormat(event.target.value);
   }
 
+  
+  
   const handleOptionsChange = (event) => {    
     const updatedOptions = options.map((opt, index) => 
-      index == parseInt(event.target.value) ? !opt : opt
+      index === parseInt(event.target.value) ? !opt : opt
     ); 
     setOptions(updatedOptions);
     
@@ -137,19 +146,19 @@ const App = () => {
               value="other" 
               checked={format === 'other'}
               onChange={handleFormatChange}  
-            /> <label for="radio-other">Other</label>
+            /> <label for="radio-other">Choose your options</label>
             <br/>
-            <span class="others-description">(type your options separated by commas in the box below and click update)</span>
+            <span class="others-description">(Type your options separated by commas in the box below)</span>
             <br/>
             <input 
-            type="text"
-            class="input-others"
+              name="input-others"
+              type="text"
+              class="input-others"
+              value={inputVariable}
+              onChange={event => setInputVariable(event.target.value)}
+              placeholder="e.g. apple,orange,mango"
             ></input>
-            <button 
-            class="update-button" 
-            disabled={checkboxCount <= 1 ? true : false}
-            >Update
-            </button>
+
             <br/>
           </form>
           <br/>
