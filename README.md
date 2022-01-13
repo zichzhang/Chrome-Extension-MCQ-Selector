@@ -14,8 +14,8 @@
 
 Users of the MAJIQ Wheel can:
 
-* Select the format of options (either numeric or alphabetic).
-* Select which options to choose between (from first to eighth).
+* Select the format of options (either numeric, alphabetic or you choose your options).
+* Select which options to choose between (for numeric and alphabetic only).
 
 Here are some possible use-cases of the MAJIQ Wheel: choosing between MCQ answers, randomizing the player order when playing a board game with friends, ...
 
@@ -28,10 +28,11 @@ Here are some possible use-cases of the MAJIQ Wheel: choosing between MCQ answer
 > Jan 11th, 2022
 
 * Users can now select up to 8 options.
-
-> Incoming
-
 * Users will be able to choose "Other" format allowing them to manually type their inputs.
+
+> Jan 13th, 2022
+
+* Version 2 of MAJIQ is complete.
 
 ## Instructions for Developers
 
