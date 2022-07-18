@@ -6,6 +6,8 @@
 
 *MAJIQ Wheel is a web browser extension originally intended for randomly selecting an answer for multiple choice questions.*
 
+Chrome Store: https://chrome.google.com/webstore/detail/majiq-wheel/ppooppbgpecgjkajonpfapehnebehaba
+
 ## Usage
 
 <p align="center">
